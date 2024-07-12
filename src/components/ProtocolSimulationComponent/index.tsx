@@ -1,69 +1,55 @@
-"use client";
-
-import React, { useState } from "react";
-
-type FormDataType = {
-  avaxPrice: number;
-  amountOfAVAXDepositedIntoTheProtocol: number;
-  amountOfAUSDInCirculation: number;
-  amountOfXAVAXInCirculation: number;
-};
+import useProtocolSimulationStore from "@/store/protocolSimulation.store";
+import { ProtocolSimulationFormDataType } from "@/types/ProtocolSimulation.type";
+import React from "react";
 
 const ProtocolSimulationComponent = () => {
-  const [formData, setFormData] = useState<FormDataType>({
-    avaxPrice: 0,
-    amountOfAVAXDepositedIntoTheProtocol: 0,
-    amountOfAUSDInCirculation: 0,
-    amountOfXAVAXInCirculation: 0,
-  });
+  const { setFormData } = useProtocolSimulationStore();
 
   const handleChange = (e: any) => {
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
       [e.target.name]: Number(e.target.value),
-    }));
+    } as ProtocolSimulationFormDataType);
   };
-
-  console.log(formData);
 
   return (
     <div>
-      <form>
-        <h3>Protocol Simulation</h3>
-        <div>
-          <label>Avax Price</label>
+      <h3>Protocol Simulation</h3>
+      <div>
+        <label>Avax Price</label>
 
-          <input type="text" name="avaxPrice" onChange={handleChange} />
-        </div>
+        <input type="text" name="avaxPrice" onChange={handleChange} required />
+      </div>
 
-        <div>
-          <label>Amount of AVAX Deposited Into The Protocol</label>
+      <div>
+        <label>Amount of AVAX Deposited Into The Protocol</label>
 
-          <input
-            type="text"
-            name="amountOfAVAXDepositedIntoTheProtocol"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Amount of aUSD In Circulation</label>
+        <input
+          type="text"
+          name="amountOfAVAXDepositedIntoTheProtocol"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Amount of aUSD In Circulation</label>
 
-          <input
-            type="text"
-            name="amountOfAUSDInCirculation"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Amount of xAVAX In Circulation</label>
+        <input
+          type="text"
+          name="amountOfAUSDInCirculation"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Amount of xAVAX In Circulation</label>
 
-          <input
-            type="text"
-            name="amountOfXAVAXInCirculation"
-            onChange={handleChange}
-          />
-        </div>
-      </form>
+        <input
+          type="text"
+          name="amountOfXAVAXInCirculation"
+          onChange={handleChange}
+          required
+        />
+      </div>
     </div>
   );
 };

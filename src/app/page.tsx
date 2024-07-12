@@ -1,11 +1,9 @@
-import ProtocolSimulationComponent from "@/components/ProtocolSimulationComponent";
-import TradingSimulationComponent from "@/components/TradingSimulationComponent";
+import TaskComponent from "@/components/TaskComponent";
 
 export default function Home() {
   return (
     <div>
-      <ProtocolSimulationComponent />
-      <TradingSimulationComponent />
+      <TaskComponent />
     </div>
   );
 }

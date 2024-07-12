@@ -1,46 +1,39 @@
-"use client";
-
-import React, { useState } from "react";
-
-type FormDataType = {
-  amountOfAVAXDepositedByTheUser: number;
-  changeInAVAXPrice: number;
-};
+import useTradingSimulationStore from "@/store/tradingSimulation.store";
+import { TradingSimulationFormDataType } from "@/types/TradingSimulation.type";
+import React from "react";
 
 const TradingSimulationComponent = () => {
-  const [formData, setFormData] = useState<FormDataType>({
-    amountOfAVAXDepositedByTheUser: 0,
-    changeInAVAXPrice: 0,
-  });
+  const { setFormData } = useTradingSimulationStore();
 
   const handleChange = (e: any) => {
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
       [e.target.name]: Number(e.target.value),
-    }));
+    } as TradingSimulationFormDataType);
   };
-
-  console.log(formData);
 
   return (
     <div>
-      <form>
-        <h3>Trading Simulation</h3>
-        <div>
-          <label>Amount of AVAX Deposited By The User</label>
+      <h3>Trading Simulation</h3>
+      <div>
+        <label>Amount of AVAX Deposited By The User</label>
 
-          <input
-            type="text"
-            name="amountOfAVAXDepositedByTheUser"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Change in AVAX Price</label>
+        <input
+          type="text"
+          name="amountOfAVAXDepositedByTheUser"
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div>
+        <label>Change in AVAX Price</label>
 
-          <input type="text" name="changeInAVAXPrice" onChange={handleChange} />
-        </div>
-      </form>
+        <input
+          type="text"
+          name="changeInAVAXPrice"
+          onChange={handleChange}
+          required
+        />
+      </div>
     </div>
   );
 };
