@@ -1,55 +1,46 @@
 import useProtocolSimulationStore from "@/store/protocolSimulation.store";
 import { ProtocolSimulationFormDataType } from "@/types/ProtocolSimulation.type";
 import React from "react";
+import FormInput from "../common/FormInput";
 
 const ProtocolSimulationComponent = () => {
   const { setFormData } = useProtocolSimulationStore();
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       [e.target.name]: Number(e.target.value),
     } as ProtocolSimulationFormDataType);
   };
 
   return (
-    <div>
-      <h3>Protocol Simulation</h3>
-      <div>
-        <label>Avax Price</label>
+    <div className="flex flex-col space-y-4">
+      <h3 className="text-center mb-7 font-semibold xs:text-sm md:text-lg text-gray-700">
+        Protocol Simulation
+      </h3>
 
-        <input type="text" name="avaxPrice" onChange={handleChange} required />
-      </div>
+      <FormInput
+        label="Avax Price"
+        name="avaxPrice"
+        handleChange={handleChange}
+      />
 
-      <div>
-        <label>Amount of AVAX Deposited Into The Protocol</label>
+      <FormInput
+        label="Amount of AVAX Deposited Into The Protocol"
+        name="amountOfAVAXDepositedIntoTheProtocol"
+        handleChange={handleChange}
+      />
 
-        <input
-          type="text"
-          name="amountOfAVAXDepositedIntoTheProtocol"
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Amount of aUSD In Circulation</label>
+      <FormInput
+        label="Amount of aUSD In Circulation"
+        name="amountOfAUSDInCirculation"
+        handleChange={handleChange}
+      />
 
-        <input
-          type="text"
-          name="amountOfAUSDInCirculation"
-          onChange={handleChange}
-          required
-        />
-      </div>
-      <div>
-        <label>Amount of xAVAX In Circulation</label>
-
-        <input
-          type="text"
-          name="amountOfXAVAXInCirculation"
-          onChange={handleChange}
-          required
-        />
-      </div>
+      <FormInput
+        label="Amount of xAVAX In Circulation"
+        name="amountOfXAVAXInCirculation"
+        handleChange={handleChange}
+      />
     </div>
   );
 };

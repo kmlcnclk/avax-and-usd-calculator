@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .custom-input {
+    @apply rounded-md p-2 border border-gray-200 xs:w-[250px] md:w-96;
+  }
+
+  .custom-input-label {
+    @apply text-gray-700 xs:text-xs md:text-base font-semibold ml-1;
+  }
+
+  .custom-button {
+    @apply bg-blue-500 w-full rounded-lg shadow-lg px-5 py-3 text-white hover:bg-blue-600 transition-all font-semibold;
+  }
+}
