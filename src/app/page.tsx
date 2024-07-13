@@ -2,7 +2,7 @@ import TaskComponent from "@/components/TaskComponent";
 
 function Home() {
   return (
-    <div className="flex justify-center items-center xs:p-4 sm:p-12">
+    <div className="flex justify-center items-center xs:p-6 sm:p-12">
       <TaskComponent />
     </div>
   );

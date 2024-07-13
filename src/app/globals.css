@@ -4,11 +4,11 @@
 
 @layer utilities {
   .custom-input {
-    @apply rounded-md p-2 border border-gray-200 xs:w-[250px] md:w-96;
+    @apply rounded-md p-2 border border-gray-200 xs:w-full lg:w-96;
   }
 
   .custom-input-label {
-    @apply text-gray-700 xs:text-xs md:text-base font-semibold ml-1;
+    @apply text-gray-600 xs:text-xs md:text-sm font-semibold ml-1;
   }
 
   .custom-button {

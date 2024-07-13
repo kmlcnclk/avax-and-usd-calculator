@@ -16,7 +16,7 @@ const FormInput: React.FC<Props> = ({ handleChange, name, label }: Props) => {
         name={name}
         onChange={handleChange}
         required
-        className="custom-input"
+        className="custom-input w-full"
       />
     </div>
   );

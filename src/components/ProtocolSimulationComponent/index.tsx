@@ -1,6 +1,6 @@
+import React from "react";
 import useProtocolSimulationStore from "@/store/protocolSimulation.store";
 import { ProtocolSimulationFormDataType } from "@/types/ProtocolSimulation.type";
-import React from "react";
 import FormInput from "../common/FormInput";
 
 const ProtocolSimulationComponent = () => {

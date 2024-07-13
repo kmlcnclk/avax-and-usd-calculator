@@ -29,9 +29,9 @@ function TaskComponent() {
     <div className="space-y-6 flex justify-center items-center flex-col">
       <form
         onSubmit={submitFunc}
-        className="flex justify-center items-center flex-col bg-gray-200 p-10 rounded-lg shadow-lg space-y-5 w-min"
+        className="flex justify-center items-center flex-col bg-gray-200 xs:p-5 sm:p-10 rounded-lg shadow-lg space-y-5 xs:w-full lg:w-min"
       >
-        <div className="flex justify-center xs:space-y-7 lg:space-y-0 xs:space-x-0 lg:space-x-10 lg:flex-row xs:flex-col">
+        <div className="flex justify-center xs:space-y-7 lg:space-y-0 xs:space-x-0 lg:space-x-10 lg:flex-row xs:flex-col w-full">
           <ProtocolSimulationComponent />
           <TradingSimulationComponent />
         </div>
