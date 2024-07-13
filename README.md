@@ -1,6 +1,6 @@
 # AVAX and USD Calculator
 
-This is a calculator to calculate AVAX and USD. You can go to site with this [link](https://avax-and-usd-calculator.vercel.app/).
+This is a calculator to calculate AVAX and USD. You can go to live website with this [link](https://avax-and-usd-calculator.vercel.app/).
 
 ## Used Technologies
 
